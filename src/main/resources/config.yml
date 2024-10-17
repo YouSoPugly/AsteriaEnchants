@@ -1,0 +1,223 @@
+###############################################################
+# This is the configuration file for the plugin
+# You can change the values to your liking
+# Make sure to reload the plugin after changing the values
+# You can use the command /asenchant reload to reload the plugin
+###############################################################
+max-enchants: 7
+rarities:
+  common: "&fCommon"
+  uncommon: "&aUncommon"
+  rare: "&9Rare"
+  epic: "&5Epic"
+  legendary: "&6Legendary"
+  mythic: "&dMythic"
+###############################################################
+# level-weight-equation: The equation used to calculate the weight of the enchantment based on the level
+# {max}: The maximum level of the enchantment
+# {level}: The level of the enchantment
+# Example: "1.5 * ({max} - {level} + 1)^3"
+###############################################################
+level-weight-equation: "1.5 * ({max} - {level} + 1)^3"
+###############################################################
+# Enchantments
+# Each enchantment has the following properties:
+# - name: The name of the enchantment
+# - max-level: The maximum level of the enchantment
+# - description: The description of the enchantment (use || to create a new line)
+# - rarity: The rarity of the enchantment
+# - item: The item that represents the enchantment
+# - types: The types of items that the enchantment can be applied to
+#
+# Note that enchantments must be added in code
+# This config only adjusts the properties of the enchantments
+###############################################################
+enchants:
+## PvP Enchants
+  life-steal:
+    name: "Life Steal"
+    max-level: 3
+    description: "Steal health from your enemies!"
+    rarity: "RARE"
+    item: "SUSPICIOUS_STEW"
+    types:
+      - "WEAPON"
+  confusion:
+    name: "Confusion"
+    maxlevel: 4
+    rarity: "Common"
+    description: "Chance to give your||enemy nausea on hit"
+    item: "SPIDER_EYE"
+    types:
+      - "AXE"
+  drain:
+    name: "Drain"
+    maxlevel: 4
+    rarity: "Common"
+    description: "Chance to drain 1 bar||of your enemy's hunger"
+    item: "HOPPER"
+    types:
+      - "WEAPON"
+  power-up:
+    name: "Power Up"
+    maxlevel: 3
+    rarity: "Common"
+    description: "Chance to gain||strength and fatigue"
+    item: "NETHERITE_SWORD"
+    types:
+      - "WEAPON"
+## Mob Grinding Enchants
+  spawner-slayer:
+    name: "Spawner Slayer"
+    maxlevel: 5
+    rarity: "Rare"
+    description: "Deal increased damage||to spawner mobs"
+    item: "SPECTRAL_ARROW"
+    types:
+      - "SWORD"
+## Tool Enchants
+    auto-smelt:
+      name: "Auto Smelt"
+      maxlevel: 3
+      rarity: "Common"
+      description: "Automatically smelt items"
+      item: "FURNACE"
+      types:
+      - "PICKAXE"
+      - "AXE"
+      - "SHOVEL"
+## Farming Enchants
+
+## Mining Enchants
+  regenerate:
+    name: "Regenerate"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to regenerate an ore"
+    item: "GOLDEN_APPLE"
+    types:
+      - "PICKAXE"
+## Fishing Enchants
+  double-catch:
+    name: "Double Catch"
+    maxlevel: 3
+    rarity: "Epic"
+    description: "Chance to catch 2 fish"
+    item: "RAW_FISH"
+    types:
+      - "FISHING_ROD"
+  ## etc.
+  5:
+    name: "Poison"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Chance to give your||enemy poison on hit"
+    item: "potion of poison"
+  6:
+    name: "Wither"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Chance to give your||enemy wither on hit"
+    item: "wither skeleton skull"
+  7:
+    name: "Featherweight"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Chance to gain||haste and speed"
+    item: "feather"
+  8:
+    name: "XP Boost"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Gain 5% extra EXP per||level when you kill a mob"
+    item: "bottle o' enchanting"
+  9:
+    name: "Slowness"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to give your enemy||slowness 3 on hit"
+    item: "potion of slowness"
+  10:
+    name: "Levitation"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to give your enemy||levitation on hit"
+    item: "shulker box"
+  11:
+    name: "Blast"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to explode your||enemy dealing 2-3.5 hearts"
+    item: "tnt"
+  12:
+    name: "Blindness"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to blind your||enemy on hit"
+    item: "black concrete"
+  13:
+    name: "Chain"
+    maxlevel: 3
+    rarity: "Legendary"
+    description: "Every hit within a second||from the last deals||+10% dmg per level"
+    item: "chains"
+  14:
+    name: "Bleed"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to make your||enemy bleed, inflicting||20% damage every 10 ticks||for 3 seconds"
+    item: "red wool"
+  15:
+    name: "Life Steal"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Regain a % of||the damage done as health"
+    item: "diamond sword"
+  16:
+    name: "Thor"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to strike your||enemy with lightning on||hit and give slowness 1"
+    item: "lightning rod"
+  17:
+    name: "Head Hunter"
+    maxlevel: 1
+    rarity: "Legendary"
+    description: "Chance to drop your||victim's head on death"
+    item: "skeleton skull"
+  18:
+    name: "Heavy Strike"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Chance to double||your damage on hit"
+    item: "iron sword"
+  19:
+    name: "Final Strike"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Deal 50% more damage to||enemies below 5 hearts"
+    item: "gold sword"
+  20:
+    name: "Weaken"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Chance to give weakness||to your enemy on hit"
+    item: "wooden sword"
+  21:
+    name: "Armor Pierce"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Chance to bypass half||of your enemy's armor"
+    item: "netherite chestplate"
+  22:
+    name: "Spawners Bane"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Multiplies your damage||dealt to spawner mobs"
+    item: "zombie skull"
+  23:
+    name: "Surge"
+    maxlevel: 5
+    rarity: "Mythical"
+    description: "Chance to massively multiply||damage dealt to spawner mobs"
+    item: "eye of ender"

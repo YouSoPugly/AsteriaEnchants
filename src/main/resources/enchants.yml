@@ -1,0 +1,434 @@
+### TEMPORARY FILE, WILL BE REMOVED IN THE FUTURE ###
+sword:
+  1:
+    name: "Confusion"
+    maxlevel: 4
+    rarity: "Common"
+    description: "Chance to give your||enemy nausea on hit"
+    item: "potion"
+  2:
+    name: "Drain"
+    maxlevel: 4
+    rarity: "Common"
+    description: "Chance to drain 1 bar||of your enemy's hunger"
+    item: "hopper"
+  3:
+    name: "Power Up"
+    maxlevel: 3
+    rarity: "Common"
+    description: "Chance to gain||strength and fatigue"
+    item: "netherite sword"
+  4:
+    name: "Spawner Slayer"
+    maxlevel: 5
+    rarity: "Rare"
+    description: "Deal increased damage||to spawner mobs"
+    item: "spectral arrow"
+  5:
+    name: "Poison"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Chance to give your||enemy poison on hit"
+    item: "potion of poison"
+  6:
+    name: "Wither"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Chance to give your||enemy wither on hit"
+    item: "wither skeleton skull"
+  7:
+    name: "Featherweight"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Chance to gain||haste and speed"
+    item: "feather"
+  8:
+    name: "XP Boost"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Gain 5% extra EXP per||level when you kill a mob"
+    item: "bottle o' enchanting"
+  9:
+    name: "Slowness"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to give your enemy||slowness 3 on hit"
+    item: "potion of slowness"
+  10:
+    name: "Levitation"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to give your enemy||levitation on hit"
+    item: "shulker box"
+  11:
+    name: "Blast"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to explode your||enemy dealing 2-3.5 hearts"
+    item: "tnt"
+  12:
+    name: "Blindness"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to blind your||enemy on hit"
+    item: "black concrete"
+  13:
+    name: "Chain"
+    maxlevel: 3
+    rarity: "Legendary"
+    description: "Every hit within a second||from the last deals||+10% dmg per level"
+    item: "chains"
+  14:
+    name: "Bleed"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to make your||enemy bleed, inflicting||20% damage every 10 ticks||for 3 seconds"
+    item: "red wool"
+  15:
+    name: "Life Steal"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Regain a % of||the damage done as health"
+    item: "diamond sword"
+  16:
+    name: "Thor"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to strike your||enemy with lightning on||hit and give slowness 1"
+    item: "lightning rod"
+  17:
+    name: "Head Hunter"
+    maxlevel: 1
+    rarity: "Legendary"
+    description: "Chance to drop your||victim's head on death"
+    item: "skeleton skull"
+  18:
+    name: "Heavy Strike"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Chance to double||your damage on hit"
+    item: "iron sword"
+  19:
+    name: "Final Strike"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Deal 50% more damage to||enemies below 5 hearts"
+    item: "gold sword"
+  20:
+    name: "Weaken"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Chance to give weakness||to your enemy on hit"
+    item: "wooden sword"
+  21:
+    name: "Armor Pierce"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Chance to bypass half||of your enemy's armor"
+    item: "netherite chestplate"
+  22:
+    name: "Spawners Bane"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Multiplies your damage||dealt to spawner mobs"
+    item: "zombie skull"
+  23:
+    name: "Surge"
+    maxlevel: 5
+    rarity: "Mythical"
+    description: "Chance to massively multiply||damage dealt to spawner mobs"
+    item: "eye of ender"
+
+armor:
+  1:
+    name: "Reinforced"
+    maxlevel: 5
+    rarity: "Common"
+    description: "Boosts your health by half||a heart per level"
+    item: "netherite chestplate"
+  2:
+    name: "Pyro"
+    maxlevel: 4
+    rarity: "Common"
+    description: "Chance to set your||enemies on fire||when they hit you"
+    item: "blaze powder"
+  3:
+    name: "Guard"
+    maxlevel: 3
+    rarity: "Common"
+    description: "Chance to give damage||resistance and slowness||when you get hit"
+    item: "iron ingot"
+  4:
+    name: "Fatigue"
+    maxlevel: 4
+    rarity: "Common"
+    description: "Chance to slow down||your enemies attacks"
+    item: "soul sand"
+  5:
+    name: "Healing"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Chance to regain||1 heart when hit"
+    item: "potion of healing"
+  6:
+    name: "Not Yet"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Small chance to||give you regeneration||when at low health"
+    item: "potion of regeneration"
+  7:
+    name: "Slow"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Chance to slow your||enemy when they hit you"
+    item: "soul sand"
+  8:
+    name: "Rocket Jump"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Small chance to give||high levels of high jumpboost"
+    item: "rabbit's foot"
+  9:
+    name: "Escape"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to give speed 3||when you get hit"
+    item: "snowball"
+  10:
+    name: "Withering"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to give your||attacker wither when hit"
+    item: "wither rose"
+  11:
+    name: "Sponge"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to give you||2 absorption hearts"
+    item: "sponge"
+  12:
+    name: "Haste"
+    maxlevel: 3
+    rarity: "Legendary"
+    description: "Chance to boost||your attack speed"
+    item: "stone"
+  13:
+    name: "Light Weight"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Boosts your movement||speed by 2.5% per level"
+    item: "sugar"
+  14:
+    name: "Fire Resistant"
+    maxlevel: 1
+    rarity: "Mythical"
+    description: "25% chance to give you||fire resistance when hit"
+    item: "fire charge"
+  15:
+    name: "Recovery"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Regain a bit of health||when getting a kill"
+    item: "golden carrot"
+  16:
+    name: "Storm Caller"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Chance to strike your||attacker with lightning"
+    item: "lightning rod"
+  17:
+    name: "Resistance"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Chance to give resistance||for 5 seconds when hit"
+    item: "netherite leggings"
+
+bow:
+  1:
+    name: "Slow"
+    maxlevel: 4
+    rarity: "Common"
+    description: "Chance to slow your||enemy when shot"
+    item: "snowball"
+  2:
+    name: "Poison"
+    maxlevel: 4
+    rarity: "Common"
+    description: "Chance to poison your||enemy when shot"
+    item: "poisonous potato"
+  3:
+    name: "Wither"
+    maxlevel: 4
+    rarity: "Common"
+    description: "Chance to wither your||enemy when shot"
+    item: "wither rose"
+  4:
+    name: "Life Steal"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Regain a % of the||damage done as health"
+    item: "potion of healing"
+  5:
+    name: "Escape"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Chance to buff your speed||when you shoot an enemy"
+    item: "sugar"
+  6:
+    name: "Pierce"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Small chance to ignore 50%||of your enemy's armor"
+    item: "netherite chestplate"
+  7:
+    name: "Explosive"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to explode||on hit"
+    item: "tnt"
+  8:
+    name: "XP Boost"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Gain 5% extra EXP per||level when you kill a mob"
+    item: "experience bottle"
+  9:
+    name: "Blinding"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to blind your||enemy when shot"
+    item: ""
+  10:
+    name: "Debilitate"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Chance to inflict your||enemy with mining fatigue"
+    item: "obsidian"
+  11:
+    name: "Confusion"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to confuse your||enemy when shot"
+    item: "sea lantern"
+  12:
+    name: "Bleed"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to make your||enemy bleed when shot||Dealing 1 dmg per 5 ticks"
+    item: "iron sword"
+  13:
+    name: "Levitation"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to make||your victim float"
+    item: "bow"
+  14:
+    name: "Triple Shot"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Chance to shoot 3 arrows||||&cNot obtainable on crossbows"
+    item: "arrow"
+  15:
+    name: "Homing"
+    maxlevel: 1
+    rarity: "Mythical"
+    description: "Your arrows will home in on your enemy"
+    item: "spectral arrow"
+  16:
+    name: "Long Shot"
+    maxlevel: 1
+    rarity: "Mythical"
+    description: "Deal 10% extra dmg per 25 blocks||between you and your enemy"
+    item: "bow"
+  17:
+    name: "Rapid Fire"
+    maxlevel: 3
+    rarity: "Mythical"
+    description: "Chance to fire 3 times in a row"
+    item: "crossbow"
+  18:
+    name: "Swap"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Chance to exchange places||with your victim"
+    item: "ender pearl"
+
+tool:
+  1:
+    name: "Telepathy"
+    maxlevel: 1
+    rarity: "Common"
+    description: "Mined blocks will be placed||in your inventory"
+    item: "ender pearl"
+  2:
+    name: "Speed"
+    maxlevel: 2
+    rarity: "Common"
+    description: "Has a chance to give||speed 3 when mining"
+    item: "sugar"
+  3:
+    name: "Jump Boost"
+    maxlevel: 2
+    rarity: "Common"
+    description: "Has a chance to give||jump boost 3 when mining"
+    item: "rabbit foot"
+  4:
+    name: "Drill"
+    maxlevel: 4
+    rarity: "Rare"
+    description: "Has a chance to mine||5 blocks in front of you"
+    item: "iron pickaxe"
+  5:
+    name: "Night Vision"
+    maxlevel: 1
+    rarity: "Rare"
+    description: "Gives night vision while mining"
+    item: "night vision potion"
+  6:
+    name: "Haste"
+    maxlevel: 2
+    rarity: "Epic"
+    description: "Has a chance to give||haste 2 when mining"
+    item: "diamond pickaxe"
+  7:
+    name: "Smelting"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Has a 25% chance per lvl||to smelt your mined blocks"
+    item: "lit furnace"
+  8:
+    name: "Vein Miner"
+    maxlevel: 4
+    rarity: "Epic"
+    description: "Has a chance to mine||all of the same block"
+    item: "iron ore"
+  9:
+    name: "Regenerate"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Has a chance to instantly||replace a mined ore||Doesn't work with silk touch"
+    item: "potion of regeneration"
+  10:
+    name: "Upgrade"
+    maxlevel: 4
+    rarity: "Legendary"
+    description: "Has a chance to give an||extra block of the mined mineral"
+    item: "netherite block"
+  11:
+    name: "Double Drops"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Has a chance to drop||double the mined minerals||Doesn't work with silk touch"
+    item: "glowstone"
+  12:
+    name: "Turbo Charge"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Has a small chance to give||haste 4 when mining"
+    item: "netherite pickaxe"
+  13:
+    name: "Repair"
+    maxlevel: 4
+    rarity: "Mythical"
+    description: "Has a chance to repair||your tool by a bit"
+    item: "anvil"

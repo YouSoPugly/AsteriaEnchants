@@ -1,0 +1,4 @@
+name: AsteriaEnchants
+version: '1.0-SNAPSHOT'
+main: xyz.pugly.asteriaEnchants.AsteriaEnchants
+api-version: '1.21'
