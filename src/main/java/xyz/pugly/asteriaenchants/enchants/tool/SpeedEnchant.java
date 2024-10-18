@@ -15,7 +15,7 @@ import xyz.pugly.asteriaenchants.enchants.Trigger;
 import java.util.Collection;
 import java.util.Random;
 
-public class TelekinesisEnchant extends Enchant {
+public class SpeedEnchant extends Enchant {
 
     EnchantData data = new EnchantData(ConfigHandler.getEnchant("speed"), Trigger.BLOCK_BREAK);
     private final Random random = new Random(); // Create a Random object
