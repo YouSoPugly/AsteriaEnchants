@@ -11,7 +11,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import xyz.pugly.asteriaenchants.commands.AsteriaEnchantsCommand;
 import xyz.pugly.asteriaenchants.commands.CustomEnchantCommand;
 import xyz.pugly.asteriaenchants.enchants.EnchantHandler;
+import xyz.pugly.asteriaenchants.integrations.IntegrationHandler;
+import xyz.pugly.asteriaenchants.listeners.onBlockBreak;
+import xyz.pugly.asteriaenchants.listeners.onEntityDamage;
 import xyz.pugly.asteriaenchants.listeners.onInventoryClick;
+import xyz.pugly.asteriaenchants.listeners.onPlayerFish;
 
 import java.io.File;
 
@@ -43,10 +47,16 @@ public final class AsteriaEnchants extends JavaPlugin {
 
         // Enchants
         Bukkit.getPluginManager().registerEvents(new EnchantHandler(), this);
-        Bukkit.getScheduler().runTaskTimer(this, EnchantHandler.getTimer(), 0, 20);
+        Bukkit.getScheduler().runTaskTimer(this, EnchantHandler.getTimer(), 0, ConfigHandler.getTime()*20);
         EnchantHandler.loadEnchants();
 
         Bukkit.getPluginManager().registerEvents(new onInventoryClick(), this);
+        Bukkit.getPluginManager().registerEvents(new onBlockBreak(), this);
+        Bukkit.getPluginManager().registerEvents(new onPlayerFish(), this);
+        Bukkit.getPluginManager().registerEvents(new onEntityDamage(), this);
+
+        // Integrations
+        IntegrationHandler.loadIntegrations();
     }
 
     @Override
@@ -61,5 +71,17 @@ public final class AsteriaEnchants extends JavaPlugin {
     public static void reload() {
         instance.reloadConfig();
         ConfigHandler.loadConfig(instance.getConfig());
+    }
+
+    public static void log(String message) {
+        instance.getLogger().info(message);
+    }
+
+    public static void error(String message) {
+        instance.getLogger().severe(message);
+    }
+
+    public static void warning(String message) {
+        instance.getLogger().warning(message);
     }
 }
