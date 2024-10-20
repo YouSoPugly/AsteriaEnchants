@@ -4,7 +4,12 @@
 # Make sure to reload the plugin after changing the values
 # You can use the command /asenchant reload to reload the plugin
 ###############################################################
+integrations:
+  towny: true
+  worldguard: true
 max-enchants: 7
+# The interval in seconds between "time" triggers
+time-interval: 3
 rarities:
   common: "&fCommon"
   uncommon: "&aUncommon"
@@ -33,6 +38,15 @@ level-weight-equation: "1.5 * ({max} - {level} + 1)^3"
 # This config only adjusts the properties of the enchantments
 ###############################################################
 enchants:
+## Misc Enchants
+  reinforce:
+    name: "Reinforce"
+    maxlevel: 10
+    rarity: "Legendary"
+    description: "Chance to repair your||item a bit every 3 seconds"
+    item: "ANVIL"
+    types:
+      - "ALL"
 ## PvP Enchants
   life-steal:
     name: "Life Steal"
@@ -66,6 +80,14 @@ enchants:
     item: "NETHERITE_SWORD"
     types:
       - "WEAPON"
+  bolster:
+    name: "Bolster"
+    maxlevel: 3
+    rarity: "Rare"
+    description: "Increase your health||by .5 hearts per level"
+    item: "NETHERITE_BLOCK"
+    types:
+      - "ARMOR"
 ## Mob Grinding Enchants
   spawner-slayer:
     name: "Spawner Slayer"

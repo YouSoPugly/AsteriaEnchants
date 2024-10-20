@@ -8,24 +8,29 @@ import xyz.pugly.asteriaenchants.AsteriaEnchants;
 import xyz.pugly.asteriaenchants.ConfigHandler;
 import xyz.pugly.asteriaenchants.enchants.Enchant;
 import xyz.pugly.asteriaenchants.enchants.EnchantData;
+import xyz.pugly.asteriaenchants.enchants.Priority;
 import xyz.pugly.asteriaenchants.enchants.Trigger;
+import xyz.pugly.asteriaenchants.events.AEBlockBreakEvent;
 
 import java.util.Collection;
+import java.util.HashMap;
 
 public class TelekinesisEnchant extends Enchant {
 
     EnchantData data = new EnchantData(ConfigHandler.getEnchant("telekinesis"), Trigger.BLOCK_BREAK);
+    Priority priority = Priority.HIGHEST;
 
     @Override
-    public void breakTrigger(BlockBreakEvent event, int level) {
+    public void breakTrigger(AEBlockBreakEvent event, int level) {
         Player player = event.getPlayer();
         Block block = event.getBlock();
         ItemStack item = player.getInventory().getItemInMainHand();
 
-        Collection<ItemStack> drops = player.getInventory().addItem(block.getDrops(item).toArray(new ItemStack[0])).values();
-        for (ItemStack drop : drops) {
-            player.getWorld().dropItem(player.getLocation(), drop);
-        }
+        event.setDropItems(false);
+        event.getDrops().forEach(drop -> {
+            HashMap<Integer, ItemStack> excess = player.getInventory().addItem(drop);
+
+        });
     }
 
 }

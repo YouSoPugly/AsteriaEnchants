@@ -14,13 +14,17 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import xyz.pugly.asteriaenchants.AsteriaEnchants;
-import xyz.pugly.asteriaenchants.enchants.armor.ReinforcedEnchant;
+import xyz.pugly.asteriaenchants.enchants.armor.BolsterEnchant;
 import xyz.pugly.asteriaenchants.enchants.tool.TelekinesisEnchant;
 import xyz.pugly.asteriaenchants.enchants.weapon.DrainEnchant;
 import xyz.pugly.asteriaenchants.enchants.weapon.VampireEnchant;
+import xyz.pugly.asteriaenchants.events.AEBlockBreakEvent;
+import xyz.pugly.asteriaenchants.events.AEPlayerDamageEvent;
+import xyz.pugly.asteriaenchants.events.AEPlayerFishEvent;
 import xyz.pugly.asteriaenchants.events.ApplyEnchantEvent;
 import xyz.pugly.asteriaenchants.events.EnchantTriggerEvent;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -52,7 +56,7 @@ public class EnchantHandler implements Listener {
         // Axe Enchants
 
         // Armor Enchants
-        registerEnchant("reinforced", new ReinforcedEnchant());
+        registerEnchant("reinforced", new BolsterEnchant());
         // Helmet Enchants
         // Chestplate Enchants
         // Leggings Enchants
@@ -124,7 +128,6 @@ public class EnchantHandler implements Listener {
     }
 
     // Trigger Handlers
-
     @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
     public static void onEnchant(ApplyEnchantEvent event) {
         EnchantTriggerEvent e = new EnchantTriggerEvent(event.getPlayer(), event.getEnchant());
@@ -147,7 +150,7 @@ public class EnchantHandler implements Listener {
                     if (enchants == null)
                         continue;
 
-                    for (Enchant enchant : enchants.keySet()) {
+                    for (Enchant enchant : sortEnchants(enchants.keySet())) {
                         if (enchant.getData().getTrigger() == Trigger.TIME) {
                             EnchantTriggerEvent e = new EnchantTriggerEvent(p, enchant);
                             Bukkit.getPluginManager().callEvent(e);
@@ -166,7 +169,7 @@ public class EnchantHandler implements Listener {
                 if (enchants == null)
                     continue;
 
-                for (Enchant enchant : enchants.keySet()) {
+                for (Enchant enchant : sortEnchants(enchants.keySet())) {
                     if (enchant.getData().getTrigger() == Trigger.TIME) {
                         EnchantTriggerEvent e = new EnchantTriggerEvent(p, enchant);
                         Bukkit.getPluginManager().callEvent(e);
@@ -179,12 +182,9 @@ public class EnchantHandler implements Listener {
         };
     }
 
-    @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
-    public static void onAttack(EntityDamageByEntityEvent event) {
-        if (!(event.getDamager() instanceof Player))
-            return;
-
-        Player player = (Player) event.getDamager();
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
+    public static void onAttack(AEPlayerDamageEvent event) {
+        Player player = event.getAttacker();
         if (!player.getInventory().getItemInMainHand().hasItemMeta())
             return;
 
@@ -192,7 +192,7 @@ public class EnchantHandler implements Listener {
         if (enchants == null)
             return;
 
-        for (Enchant enchant : enchants.keySet()) {
+        for (Enchant enchant : sortEnchants(enchants.keySet())) {
             if (enchant.getData().getTrigger() == Trigger.DAMAGE_DEALT) {
                 EnchantTriggerEvent e = new EnchantTriggerEvent(player, enchant);
                 Bukkit.getPluginManager().callEvent(e);
@@ -203,12 +203,12 @@ public class EnchantHandler implements Listener {
         }
     }
 
-    @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
-    public static void onDamage(EntityDamageByEntityEvent event) {
-        if (!(event.getEntity() instanceof Player))
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
+    public static void onDamage(AEPlayerDamageEvent event) {
+        if (!(event.getVictim() instanceof Player))
             return;
 
-        Player player = (Player) event.getEntity();
+        Player player = (Player) event.getVictim();
         if (!player.getInventory().getItemInMainHand().hasItemMeta())
             return;
 
@@ -216,7 +216,7 @@ public class EnchantHandler implements Listener {
         if (enchants == null)
             return;
 
-        for (Enchant enchant : enchants.keySet()) {
+        for (Enchant enchant : sortEnchants(enchants.keySet())) {
             if (enchant.getData().getTrigger() == Trigger.DAMAGE_TAKEN) {
                 EnchantTriggerEvent e = new EnchantTriggerEvent(player, enchant);
                 Bukkit.getPluginManager().callEvent(e);
@@ -227,8 +227,8 @@ public class EnchantHandler implements Listener {
         }
     }
 
-    @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
-    public static void onMine(BlockBreakEvent event) {
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
+    public static void onMine(AEBlockBreakEvent event) {
         Player player = event.getPlayer();
         if (!player.getInventory().getItemInMainHand().hasItemMeta())
             return;
@@ -237,7 +237,7 @@ public class EnchantHandler implements Listener {
         if (enchants == null)
             return;
 
-        for (Enchant enchant : enchants.keySet()) {
+        for (Enchant enchant : sortEnchants(enchants.keySet())) {
             if (enchant.getData().getTrigger() == Trigger.BLOCK_BREAK) {
                 EnchantTriggerEvent e = new EnchantTriggerEvent(player, enchant);
                 Bukkit.getPluginManager().callEvent(e);
@@ -248,8 +248,8 @@ public class EnchantHandler implements Listener {
         }
     }
 
-    @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
-    public static void onFish(PlayerFishEvent event) {
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
+    public static void onFish(AEPlayerFishEvent event) {
         Player player = event.getPlayer();
         if (!player.getInventory().getItemInMainHand().hasItemMeta())
             return;
@@ -258,7 +258,7 @@ public class EnchantHandler implements Listener {
         if (enchants == null)
             return;
 
-        for (Enchant enchant : enchants.keySet()) {
+        for (Enchant enchant : sortEnchants(enchants.keySet())) {
             if (enchant.getData().getTrigger() == Trigger.FISH) {
                 EnchantTriggerEvent e = new EnchantTriggerEvent(player, enchant);
                 Bukkit.getPluginManager().callEvent(e);
@@ -267,6 +267,15 @@ public class EnchantHandler implements Listener {
                 enchant.fishTrigger(event, enchants.get(enchant));
             }
         }
+    }
+
+    private static Collection<Enchant> sortEnchants(Collection<Enchant> enchants) {
+        return enchants.stream().sorted((e1, e2) -> {
+            if (e1.getPriority() == e2.getPriority()) {
+                return e1.getData().getName().compareTo(e2.getData().getName());
+            }
+            return e1.getPriority().compareTo(e2.getPriority());
+        }).toList();
     }
 
 
