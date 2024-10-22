@@ -22,6 +22,8 @@ public class VeinMinerEnchant extends Enchant {
 
     EnchantData data = new EnchantData(ConfigHandler.getEnchant("veinminer"), Trigger.BLOCK_BREAK);
 
+    private static final int BLOCKS_PER_LEVEL = 4;
+
     @Override
     public void breakTrigger(AEBlockBreakEvent event, int level) {
         Block block = event.getBlock();
@@ -30,7 +32,7 @@ public class VeinMinerEnchant extends Enchant {
             return;
         }
 
-        Collection<Block> blocksToBreak = getVein(block, level*4);
+        Collection<Block> blocksToBreak = getVein(block, level*BLOCKS_PER_LEVEL);
 
         for (Block b : blocksToBreak) {
             breakBlock(b, event.getPlayer());

@@ -66,6 +66,7 @@ public abstract class Enchant implements Listener {
         return is;
     }
 
+    // TODO: Put the lore in the config
     public ItemStack apply(ItemStack item, int level) {
         ItemMeta im = item.getItemMeta();
 
@@ -83,6 +84,7 @@ public abstract class Enchant implements Listener {
         return item;
     }
 
+    // TODO: Put the item in the config
     public ItemStack getEnchantBook(int level) {
         ItemStack is = new ItemStack(Material.ENCHANTED_BOOK);
         ItemMeta im = is.getItemMeta();

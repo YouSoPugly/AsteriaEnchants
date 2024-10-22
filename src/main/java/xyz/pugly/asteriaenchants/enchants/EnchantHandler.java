@@ -128,6 +128,8 @@ public class EnchantHandler implements Listener {
     }
 
     // Trigger Handlers
+    // TODO: Extract repeated code into a method
+    // TODO: Allow for multiple triggers per enchant
     @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
     public static void onEnchant(ApplyEnchantEvent event) {
         EnchantTriggerEvent e = new EnchantTriggerEvent(event.getPlayer(), event.getEnchant());

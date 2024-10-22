@@ -13,9 +13,11 @@ public class BolsterEnchant extends Enchant {
 
     EnchantData data = new EnchantData(ConfigHandler.getEnchant("reinforced"), Trigger.ENCHANT);
 
+    private static final double HEALTH_PER_LEVEL = 1;
+
     @Override
     public void enchantTrigger(Player p, ItemStack i, int level) {
-        i.getItemMeta().getAttributeModifiers(Attribute.GENERIC_MAX_HEALTH).add(new AttributeModifier("asenchant.reinforced", level, AttributeModifier.Operation.ADD_NUMBER));
+        i.getItemMeta().getAttributeModifiers(Attribute.GENERIC_MAX_HEALTH).add(new AttributeModifier("asenchant.reinforced", level*HEALTH_PER_LEVEL, AttributeModifier.Operation.ADD_NUMBER));
     }
 
 }
