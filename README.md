@@ -5,9 +5,9 @@
         </repository>
         
 ```                     
-        <dependency>
-          <groupId>xyz.pugly</groupId>
-          <artifactId>asteriaenchants</artifactId>
-          <version>1.0.0</version>
-        </dependency>
+<dependency>
+  <groupId>xyz.pugly</groupId>
+  <artifactId>asteriaenchants</artifactId>
+  <version>1.0.0</version>
+</dependency>
 ```
