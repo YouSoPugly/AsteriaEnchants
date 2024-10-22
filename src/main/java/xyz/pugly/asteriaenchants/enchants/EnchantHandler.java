@@ -14,8 +14,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import xyz.pugly.asteriaenchants.AsteriaEnchants;
+import xyz.pugly.asteriaenchants.enchants.any.ReinforceEnchant;
 import xyz.pugly.asteriaenchants.enchants.armor.BolsterEnchant;
 import xyz.pugly.asteriaenchants.enchants.tool.TelekinesisEnchant;
+import xyz.pugly.asteriaenchants.enchants.tool.pickaxe.VeinMinerEnchant;
 import xyz.pugly.asteriaenchants.enchants.weapon.DrainEnchant;
 import xyz.pugly.asteriaenchants.enchants.weapon.VampireEnchant;
 import xyz.pugly.asteriaenchants.events.AEBlockBreakEvent;
@@ -56,7 +58,7 @@ public class EnchantHandler implements Listener {
         // Axe Enchants
 
         // Armor Enchants
-        registerEnchant("reinforced", new BolsterEnchant());
+        registerEnchant("bolster", new BolsterEnchant());
         // Helmet Enchants
         // Chestplate Enchants
         // Leggings Enchants
@@ -65,6 +67,7 @@ public class EnchantHandler implements Listener {
         // Tool Enchants
         registerEnchant("telekinesis", new TelekinesisEnchant());
         // Pickaxe Enchants
+        registerEnchant("veinminer", new VeinMinerEnchant());
         // Axe Enchants
         // Shovel Enchants
         // Hoe Enchants
@@ -73,6 +76,7 @@ public class EnchantHandler implements Listener {
         // Bow Enchants
 
         // Any Enchants
+        registerEnchant("reinforce", new ReinforceEnchant());
 
     }
 
@@ -127,9 +131,19 @@ public class EnchantHandler implements Listener {
         return itemEnchants;
     }
 
+    private static Collection<Enchant> sortEnchants(Collection<Enchant> enchants) {
+        return enchants.stream().sorted((e1, e2) -> {
+            if (e1.getPriority() == e2.getPriority()) {
+                return e1.getData().getName().compareTo(e2.getData().getName());
+            }
+            return e1.getPriority().compareTo(e2.getPriority());
+        }).toList();
+    }
+
     // Trigger Handlers
-    // TODO: Extract repeated code into a method
+    // TODO: Extract repeated code into methods
     // TODO: Allow for multiple triggers per enchant
+
     @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
     public static void onEnchant(ApplyEnchantEvent event) {
         EnchantTriggerEvent e = new EnchantTriggerEvent(event.getPlayer(), event.getEnchant());
@@ -269,15 +283,6 @@ public class EnchantHandler implements Listener {
                 enchant.fishTrigger(event, enchants.get(enchant));
             }
         }
-    }
-
-    private static Collection<Enchant> sortEnchants(Collection<Enchant> enchants) {
-        return enchants.stream().sorted((e1, e2) -> {
-            if (e1.getPriority() == e2.getPriority()) {
-                return e1.getData().getName().compareTo(e2.getData().getName());
-            }
-            return e1.getPriority().compareTo(e2.getPriority());
-        }).toList();
     }
 
 
