@@ -10,6 +10,6 @@
 <dependency>
   <groupId>xyz.pugly</groupId>
   <artifactId>asteriaenchants</artifactId>
-  <version>1.0.0</version>
+  <version>{VERSION}</version>
 </dependency>
 ```
